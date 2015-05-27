@@ -1,13 +1,16 @@
 <?php
 
-if(!isset($_COOKIE['cart'])){
+if(!isset($_COOKIE['cart'])) {
+
 	$cart = array();
-	$storedCart = json_encode($cart);
-	setcookie('cart',$storedCart,Time()+100*60*60*24);
+	setcookie('cart',json_encode($cart),Time()+60*60*24);
+
+}else{
+
+	$cart = json_decode($_COOKIE['cart'], true);
+
 }
 
-$cart = json_decode($_COOKIE['cart'], true);
 $cartLength = count($cart);
-echo $cartLength;
 
 ?>
