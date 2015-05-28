@@ -2,13 +2,16 @@
 
 <title>Add Recipe</title>
 
-<script type="rel/stylesheet" src="scripts/javascript.js"></script>
+<script type="text/javascript" src="scripts/javascript.js"></script>
 
-<script type="rel/stylesheet">
+<script type="text/javascript">
+
+
 
 window.onload = function() {
-	$('addIngredient').onclick = addIngredient;
-	$('submitList').onclick = submitRecipe
+	$("newLine").onclick = addIngredient;
+	$("delete").onclick = removeLine(this.rowIndex);
+	//$("submitList").onclick = submitRecipe;
 }
 
 </script>
@@ -20,11 +23,14 @@ window.onload = function() {
 	<form>
 		Please input your recipe below:
 		<br>
-		<table id="listIng">
+		<table>
 			<tr><td>Recipe name:</td><td><input type="text" name="rName"></td></tr>
-		</table>
-		<button class="button" id="addIngredient">Add Ingredient</button><br>
-		<button class="button" id="submitList">Submit Recipe</button>
+		</table><br>
+		<table id="listIng">
+			<tr><th>Quantity</th><th>Measurement Type</th><th>Name</th><th>Remove?</th></tr>
+		</table><br>
+		<input type="button" id="newLine" value="Add Ingredient"><br><br>
+		<input type="button" id="submitList" value="Submit Recipe">
 	</form>
 </div>
 
