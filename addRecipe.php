@@ -10,7 +10,6 @@
 
 window.onload = function() {
 	$("newLine").onclick = addIngredient;
-	$("delete").onclick = removeLine(this.rowIndex);
 	//$("submitList").onclick = submitRecipe;
 }
 
@@ -21,13 +20,13 @@ window.onload = function() {
 
 <div>
 	<form>
-		Please input your recipe below:
+		Enter your recipe here:
 		<br>
 		<table>
 			<tr><td>Recipe name:</td><td><input type="text" name="rName"></td></tr>
 		</table><br>
 		<table id="listIng">
-			<tr><th>Quantity</th><th>Measurement Type</th><th>Name</th><th>Remove?</th></tr>
+			<tr><th>Quantity</th><th>Measurement</th><th>Name</th><th>Remove?</th></tr>
 		</table><br>
 		<input type="button" id="newLine" value="Add Ingredient"><br><br>
 		<input type="button" id="submitList" value="Submit Recipe">
