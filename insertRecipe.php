@@ -10,6 +10,8 @@
 
 window.onload = function() {
 	$("newLine").onclick = addIngredient;
+	$("").keypress = findIngredient;
+	$("findRecipe").onblur = findRecipe;
 	//$("submitList").onclick = submitRecipe;
 }
 
@@ -23,7 +25,7 @@ window.onload = function() {
 		Enter your recipe here:
 		<br>
 		<table>
-			<tr><td>Recipe name:</td><td><input type="text" name="rName"></td></tr>
+			<tr><td>Recipe name:</td><td><input type="text" name="rName" id="findRecipe"></td><td><span id="takenName">*</span></td></tr>
 		</table><br>
 		<table id="listIng">
 			<tr><th>Quantity</th><th>Measurement</th><th>Name</th><th>Remove?</th></tr>

@@ -6,9 +6,10 @@ var addIngredient = function() {
 	var measurement = { 
 		Teaspoon:1,
 		Tablespoon:2,
-		Cup:3,
+		Cups:3,
 		Gallon:4,
-		Pint:5
+		Pint:5,
+		Units:6
 	}
 
 	var table = $("listIng");
@@ -25,8 +26,9 @@ var addIngredient = function() {
 	}
 	options += "</select>";
 	
+	cell1.innerHTML = "<input type='text' name='ingQuantity'>"
 	cell2.innerHTML = options;
-	cell3.innerHTML = "<input type='text' name='ingName"+num+"'>";
+	cell3.innerHTML = "<input type='text' name='ingName"+num+"' autocomplete='on'>";
 	cell4.innerHTML = "<input type='button' value='Remove' onclick='removeLine(this)'>";
 }
 
@@ -37,4 +39,13 @@ var submitRecipe = function() {
 var removeLine = function(dCell) {
 	var row = dCell.parentNode.parentNode.rowIndex;
 	$('listIng').deleteRow(row);
+}
+
+var findIngredient = function() {
+	//var ingrText = text;
+
+}
+
+var findRecipe = function() {
+	$('takenName').innerHTML = "It worked.";
 }
